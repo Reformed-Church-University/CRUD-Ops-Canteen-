@@ -1,0 +1,133 @@
+### Create a new user
+POST http://127.0.0.1:8000/api/users/
+Content-Type: application/json
+
+{
+  "username": "newuser",
+  "password": "newpassword",
+  "role": "admin"
+}
+
+### Retrieve all users
+GET http://127.0.0.1:8000/api/users/
+Content-Type: application/json
+
+### Retrieve a specific user by ID
+GET http://127.0.0.1:8000/api/users/1/
+Content-Type: application/json
+
+### Update a user
+PUT http://127.0.0.1:8000/api/users/1/
+Content-Type: application/json
+
+{
+  "username": "updateduser",
+  "password": "updatedpassword",
+  "role": "manager"
+}
+
+### Delete a user
+DELETE http://127.0.0.1:8000/api/users/1/
+Content-Type: application/json
+
+### Create a new customer
+POST http://127.0.0.1:8000/api/customers/
+Content-Type: application/json
+
+{
+  "first_name": "John",
+  "last_name": "Doe",
+  "email": "john.doe@example.com",
+  "phone_number": "1234567890",
+  "address": "123 Main St"
+}
+
+### Retrieve all customers
+GET http://127.0.0.1:8000/api/customers/
+Content-Type: application/json
+
+### Retrieve a specific customer by ID
+GET http://127.0.0.1:8000/api/customers/1/
+Content-Type: application/json
+
+### Update a customer
+PUT http://127.0.0.1:8000/api/customers/1/
+Content-Type: application/json
+
+{
+  "first_name": "Jane",
+  "last_name": "Smith",
+  "email": "jane.smith@example.com",
+  "phone_number": "0987654321",
+  "address": "456 Main St"
+}
+
+### Delete a customer
+DELETE http://127.0.0.1:8000/api/customers/1/
+Content-Type: application/json
+
+### Create a new category
+POST http://127.0.0.1:8000/api/categories/
+Content-Type: application/json
+
+{
+  "name": "Drinks"
+}
+
+### Retrieve all categories
+GET http://127.0.0.1:8000/api/categories/
+Content-Type: application/json
+
+### Retrieve a specific category by ID
+GET http://127.0.0.1:8000/api/categories/2/
+Content-Type: application/json
+
+### Update a category
+PUT http://127.0.0.1:8000/api/categories/2/
+Content-Type: application/json
+
+{
+  "name": "Soft Drinks"
+}
+
+### Delete a category
+DELETE http://127.0.0.1:8000/api/categories/2/
+Content-Type: application/json
+
+### Create a new product
+POST http://127.0.0.1:8000/api/products/
+Content-Type: application/json
+
+{
+  "name": "Drink",
+  "description": "Pepsi",
+  "price": 0.50,
+  "category": 3,
+  "quantity_in_stock": 50,
+  "unit": "piece"
+}
+
+### Retrieve all products
+GET http://127.0.0.1:8000/api/products/
+Content-Type: application/json
+
+### Retrieve a specific product by ID
+GET http://127.0.0.1:8000/api/products/1/
+Content-Type: application/json
+
+### Update a product
+PUT http://127.0.0.1:8000/api/products/1/
+Content-Type: application/json
+
+{
+  "name": "Pepsi Drink",
+  "description": "Pepsi",
+  "price": 0.50,
+  "category": 3,
+  "quantity_in_stock": 30,
+  "unit": "piece"
+}
+
+### Delete a product
+DELETE http://127.0.0.1:8000/api/products/1/
+Content-Type: application/json
