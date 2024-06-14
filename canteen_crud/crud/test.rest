@@ -13,11 +13,11 @@ GET http://127.0.0.1:8000/api/users/
 Content-Type: application/json
 
 ### Retrieve a specific user by ID
-GET http://127.0.0.1:8000/api/users/1/
+GET http://127.0.0.1:8000/api/users/2/
 Content-Type: application/json
 
 ### Update a user
-PUT http://127.0.0.1:8000/api/users/1/
+PUT http://127.0.0.1:8000/api/users/2/
 Content-Type: application/json
 
 {
@@ -27,7 +27,7 @@ Content-Type: application/json
 }
 
 ### Delete a user
-DELETE http://127.0.0.1:8000/api/users/1/
+DELETE http://127.0.0.1:8000/api/users/2/
 Content-Type: application/json
 
 ### Create a new customer
@@ -47,11 +47,11 @@ GET http://127.0.0.1:8000/api/customers/
 Content-Type: application/json
 
 ### Retrieve a specific customer by ID
-GET http://127.0.0.1:8000/api/customers/1/
+GET http://127.0.0.1:8000/api/customers/2/
 Content-Type: application/json
 
 ### Update a customer
-PUT http://127.0.0.1:8000/api/customers/1/
+PUT http://127.0.0.1:8000/api/customers/2/
 Content-Type: application/json
 
 {
@@ -63,7 +63,7 @@ Content-Type: application/json
 }
 
 ### Delete a customer
-DELETE http://127.0.0.1:8000/api/customers/1/
+DELETE http://127.0.0.1:8000/api/customers/2/
 Content-Type: application/json
 
 ### Create a new category
@@ -71,7 +71,7 @@ POST http://127.0.0.1:8000/api/categories/
 Content-Type: application/json
 
 {
-  "name": "Drinks"
+  "name": "Beer"
 }
 
 ### Retrieve all categories
@@ -79,11 +79,11 @@ GET http://127.0.0.1:8000/api/categories/
 Content-Type: application/json
 
 ### Retrieve a specific category by ID
-GET http://127.0.0.1:8000/api/categories/2/
+GET http://127.0.0.1:8000/api/categories/3/
 Content-Type: application/json
 
 ### Update a category
-PUT http://127.0.0.1:8000/api/categories/2/
+PUT http://127.0.0.1:8000/api/categories/3/
 Content-Type: application/json
 
 {
@@ -91,7 +91,7 @@ Content-Type: application/json
 }
 
 ### Delete a category
-DELETE http://127.0.0.1:8000/api/categories/2/
+DELETE http://127.0.0.1:8000/api/categories/3/
 Content-Type: application/json
 
 ### Create a new product
@@ -99,10 +99,10 @@ POST http://127.0.0.1:8000/api/products/
 Content-Type: application/json
 
 {
-  "name": "Drink",
-  "description": "Pepsi",
+  "name": "Dhiziri",
+  "description": "Black Label",
   "price": 0.50,
-  "category": 3,
+  "category": 4,
   "quantity_in_stock": 50,
   "unit": "piece"
 }
@@ -112,18 +112,18 @@ GET http://127.0.0.1:8000/api/products/
 Content-Type: application/json
 
 ### Retrieve a specific product by ID
-GET http://127.0.0.1:8000/api/products/1/
+GET http://127.0.0.1:8000/api/products/2/
 Content-Type: application/json
 
 ### Update a product
-PUT http://127.0.0.1:8000/api/products/1/
+PUT http://127.0.0.1:8000/api/products/2/
 Content-Type: application/json
 
 {
   "name": "Pepsi Drink",
   "description": "Pepsi",
   "price": 0.50,
-  "category": 3,
+  "category": 4,
   "quantity_in_stock": 30,
   "unit": "piece"
 }
@@ -131,3 +131,100 @@ Content-Type: application/json
 ### Delete a product
 DELETE http://127.0.0.1:8000/api/products/1/
 Content-Type: application/json
+
+
+
+### Create a Supplier
+POST http://127.0.0.1:8000/api/suppliers/
+Content-Type: application/json
+
+{
+    "name": "Supplier A",
+    "contact_person": "John Doe",
+    "phone_number": "1234567890",
+    "email": "supplier@example.com",
+    "address": "123 Supplier St.",
+    "remarks": "First supplier."
+}
+
+### Get All Suppliers
+GET http://127.0.0.1:8000/api/suppliers/
+
+### Get Supplier by ID
+GET http://127.0.0.1:8000/api/suppliers/1/
+
+### Update a Supplier
+PUT http://127.0.0.1:8000/api/suppliers/1/
+Content-Type: application/json
+
+{
+    "name": "Supplier A",
+    "contact_person": "Jane Doe",
+    "phone_number": "0987654321",
+    "email": "supplier_new@example.com",
+    "address": "123 Supplier St.",
+    "remarks": "Updated supplier."
+}
+
+### Delete a Supplier
+DELETE http://127.0.0.1:8000/api/suppliers/1/
+
+### Create a Purchase Order
+POST http://127.0.0.1:8000/api/purchase_orders/
+Content-Type: application/json
+
+{
+    "supplier": 2
+}
+
+### Get All Purchase Orders
+GET http://127.0.0.1:8000/api/purchase_orders/
+
+### Get Purchase Order by ID
+GET http://127.0.0.1:8000/api/purchase_orders/1/
+
+### Update a Purchase Order
+PUT http://127.0.0.1:8000/api/purchase_orders/1/
+Content-Type: application/json
+
+{
+    "supplier": 1
+}
+
+### Delete a Purchase Order
+DELETE http://127.0.0.1:8000/api/purchase_orders/1/
+
+### Create a Purchase Order Item
+POST http://127.0.0.1:8000/api/purchase_order_items/
+Content-Type: application/json
+
+{
+    "purchase_order": 1,
+    "product_id": 1,
+    "quantity": 10,
+    "price": 50.00,
+    "total_amount": 500.00,
+    "status": "pending"
+}
+
+### Get All Purchase Order Items
+GET http://127.0.0.1:8000/api/purchase_order_items/
+
+### Get Purchase Order Item by ID
+GET http://127.0.0.1:8000/api/purchase_order_items/1/
+
+### Update a Purchase Order Item
+PUT http://127.0.0.1:8000/api/purchase_order_items/1/
+Content-Type: application/json
+
+{
+    "purchase_order": 1,
+    "product_id": 1,
+    "quantity": 15,
+    "price": 50.00,
+    "total_amount": 750.00,
+    "status": "completed"
+}
+
+### Delete a Purchase Order Item
+DELETE http://127.0.0.1:8000/api/purchase_order_items/

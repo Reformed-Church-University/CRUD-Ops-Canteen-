@@ -1,6 +1,7 @@
 from rest_framework import viewsets
-from .models import User, Customer, Category, Product
-from .serializers import UserSerializer, CustomerSerializer, CategorySerializer, ProductSerializer
+from .models import *
+from .serializers import *
+
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -17,3 +18,18 @@ class CategoryViewSet(viewsets.ModelViewSet):
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+
+
+class SupplierViewSet(viewsets.ModelViewSet):
+    queryset = Supplier.objects.all()
+    serializer_class = SupplierSerializer
+
+
+class PurchaseOrderViewSet(viewsets.ModelViewSet):
+    queryset = PurchaseOrder.objects.all()
+    serializer_class = PurchaseOrderSerializer
+
+
+class PurchaseOrderItemViewSet(viewsets.ModelViewSet):
+    queryset = PurchaseOrderItem.objects.all()
+    serializer_class = PurchaseOrderItemSerializer
